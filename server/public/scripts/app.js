@@ -24,14 +24,11 @@ function clickButton(){
 }
 
 function createButtons(){
-    $("#buttonContainer").append("<div class='color-button red'></div>");
-    $("#buttonContainer").children().last().data("color", "red");
-    $("#buttonContainer").append("<div class='color-button green'></div>");
-    $("#buttonContainer").children().last().data("color", "green");
-    $("#buttonContainer").append("<div class='color-button yellow'></div>");
-    $("#buttonContainer").children().last().data("color", "yellow");
-    $("#buttonContainer").append("<div class='color-button blue'></div>");
-    $("#buttonContainer").children().last().data("color", "blue");
+    for(var i = 0; i < colors.length; i++){
+        var color = colors[i];
+        $("#buttonContainer").append("<div class='color-button " + color + "'></div>");
+        $("#buttonContainer").children().last().data("color", color);
+    }
 }
 
 //UTILITY FUNCTIONS
